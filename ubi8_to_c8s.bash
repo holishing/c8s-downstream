@@ -3,7 +3,6 @@
 # set variable
 CENTOS_GPG_KEY="http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/Packages/centos-gpg-keys-8-2.el8.noarch.rpm"
 CENTOS_STREAM_REPOS="http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/Packages/centos-stream-repos-8-2.el8.noarch.rpm"
-CENTOS_STREAM_RELEASE="http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/Packages/centos-stream-release-8.4-1.el8.noarch.rpm"
 
 # THIS SCRIPT MUST RUN AS ROOT IN UBI CONTIAINER
 
@@ -22,7 +21,7 @@ CENTOS_STREAM_RELEASE="http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os
 /usr/bin/dnf install --releasever=8 -y centos-stream-release
 
 # Re-sync the distro pacakges
-/usr/bin/dnf distro-sync --setopt=install_weak_deps=False  -y
+/usr/bin/dnf distro-sync --setopt=install_weak_deps=False --nodocs -y
 
 # Clean packages
 /usr/bin/dnf -y autoremove
