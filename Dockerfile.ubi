@@ -1,0 +1,5 @@
+FROM registry.access.redhat.com/ubi8/ubi:latest
+MAINTAINER "Sean Ho <holishingtest@gmail.com>"
+COPY ubi8_to_c8s.bash /srv/scripts/ubi8_to_c8s.bash
+
+RUN /bin/bash /srv/scripts/ubi8_to_c8s.bash
